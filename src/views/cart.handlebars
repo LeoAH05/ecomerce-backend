@@ -1,0 +1,28 @@
+<h2>Carrito</h2>
+
+{{#if products.length}}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each products}}
+    <tr>
+      <td>{{this.product.title}}</td>
+      <td>${{this.product.price}}</td>
+      <td>{{this.quantity}}</td>
+      <td>${{this.product.price}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+<p>El carrito está vacío.</p>
+{{/if}}
+
+<a href="/products" class="btn btn-primary mt-3">Seguir comprando</a>
